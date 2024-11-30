@@ -42,3 +42,27 @@ variable "tags" {
     ManagedBy   = "Terraform"
   }
 }
+
+variable "glue_job_name" {
+  description = "Name of the Glue ETL job"
+  type        = string
+  default     = "survey-etl-job"
+}
+
+variable "glue_job_timeout" {
+  description = "Timeout for the Glue job in minutes"
+  type        = number
+  default     = 2880
+}
+
+variable "glue_worker_type" {
+  description = "Type of worker to use for Glue job"
+  type        = string
+  default     = "G.1X"
+}
+
+variable "glue_number_of_workers" {
+  description = "Number of workers to use for Glue job"
+  type        = number
+  default     = 2
+}
